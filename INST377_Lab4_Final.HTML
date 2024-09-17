@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>INST377 Lab 4 Kieran Mathis</title>
+        <link rel = "stylesheet" href="INST377_Lab4.css">
+    </head>
+    <body>
+        <header><h1 id="heading">INST377 Lab 4</h1></header>
+        <!-- Part 1 -->
+        <div class="sectionStyle">
+            <form name="contactForm" onsubmit="return(formAlert())">
+                <label>Name:</label>
+                <input type="text" id="firstName">
+                <input type="submit" value="Alert Me!">
+            </form>
+        </div>
+            <script type="text/javascript">
+                function formAlert(){
+                    if(document.contactForm.firstName.value === ""){
+                        alert('Enter a Name')
+                        return false
+                    } else {
+                    alert('Hello ' + document.getElementById("firstName").value) 
+                       return true
+                    }
+                }
+            </script>
+
+        <!-- Part 2 -->
+        <div class="styleTwo">
+        <button onclick="changeColor()">Change Color</button>
+        </div>
+        <script type="text/javascript">
+            function changeColor() {
+                if (document.body.style.backgroundColor === 'gray') {
+                    document.body.style.backgroundColor = 'aqua'
+                } else {
+                    document.body.style.backgroundColor = 'gray'
+                }
+            }
+        </script>
+
+        <!-- Part 3 -->
+         <div class="styleThree">
+        <form name="validateForm" onsubmit="return(formValidation())">
+            <label>Text Tester:</label>
+            <input type="text" id="regexTest">
+            <input type="submit" value="Validate Text">
+        </form>
+    </div>
+        <script type="text/javascript">
+            function formValidation() {
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validationRegex.test(document.validateForm.regexTest.value)) {
+                    alert('No.... Just no.')
+                    return false
+                } 
+                return true
+            }
+        </script>
+        <div class="styleFour">
+        <button onclick="addedText()">Add Text</button>
+    </div>
+        <script type="text/javascript">
+            function addedText(){
+                document.getElementById("heading").innerHTML = 'INST377 Lab 4 Adding Text'
+                return false
+            }
+        </script>
+    </body>
+</html>
